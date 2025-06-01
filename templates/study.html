@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Belajar: {{ subject.name }}</h1>
+    <div class="progress">
+        Pertanyaan {{ current_index + 1 }} dari {{ total_cards }}
+    </div>
+    <div class="flashcard">
+        <h2>Pertanyaan:</h2>
+        <p>{{ card.question }}</p>
+        
+        <form method="POST" onsubmit="return convertToUppercase()">
+            <div class="form-group">
+                <label for="user_answer">Jawaban Anda:</label>
+                <input type="text" id="user_answer" name="user_answer" required>
+            </div>
+            <input type="hidden" name="card_id" value="{{ card.id }}">
+            <button type="submit" class="btn">
+                {% if current_index + 1 == total_cards %}Selesai{% else %}Pertanyaan Berikutnya{% endif %}
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function convertToUppercase() {
+            const answerInput = document.getElementById('user_answer');
+            answerInput.value = answerInput.value.toUpperCase();
+            return true;
+        }
+    </script>
+{% endblock %}

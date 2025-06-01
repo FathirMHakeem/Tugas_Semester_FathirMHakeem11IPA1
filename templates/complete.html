@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hasil untuk {{ subject.name }}</h1>
+    <div class="progress">
+        {{ correct_count }} dari {{ total_questions }} benar!
+    </div>
+    
+    <div>
+        {% for result in results %}
+            <div class="result {% if result.is_correct %}correct{% else %}incorrect{% endif %}">
+                <h3>Pertanyaan:</h3>
+                <p>{{ result.question }}</p>
+                <h3>Jawaban Anda:</h3>
+                <p>{{ result.user_answer }}</p>
+                <h3>Jawaban Benar:</h3>
+                <p>{{ result.correct_answer }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div>
+        <a href="{{ url_for('home') }}" class="btn">Kembali ke Beranda</a>
+        <a href="{{ url_for('study', subject_id=subject.id) }}" class="btn">Coba Lagi</a>
+    </div>
+{% endblock %}

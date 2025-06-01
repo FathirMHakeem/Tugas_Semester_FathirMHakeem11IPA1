@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Tambah Flashcard untuk {{ subject.name }}</h1>
+    <form method="POST" onsubmit="return convertToUppercase()">
+        <div class="form-group">
+            <label for="question">Pertanyaan:</label>
+            <input type="text" id="question" name="question" required>
+        </div>
+        <div class="form-group">
+            <label for="answer">Jawaban:</label>
+            <input type="text" id="answer" name="answer" required>
+        </div>
+        <div>
+            <button type="submit" name="next" class="btn">Tambah Kartu</button>
+            <button type="submit" name="finish" class="btn">Selesai</button>
+        </div>
+    </form>
+
+    <script>
+        function convertToUppercase() {
+            const answerInput = document.getElementById('answer');
+            answerInput.value = answerInput.value.toUpperCase();
+            return true;
+        }
+    </script>
+{% endblock %}

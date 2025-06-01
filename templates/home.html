@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Aplikasi Flashcard</h1>
+    
+    {% if not subjects %}
+        <p>Tidak ada subjek ditemukan. Buat flashcard pertama Anda!</p>
+        <a href="{{ url_for('input_subject') }}" class="btn">Buat Flashcard Baru</a>
+    {% else %}
+        <h2>Subjek Anda</h2>
+        <div class="subject-container">
+            {% for subject in subjects %}
+                <div class="subject-item">
+                    <a href="{{ url_for('study', subject_id=subject.id) }}" class="subject-name">
+                        {{ subject.name }}
+                    </a>
+                    <form action="{{ url_for('delete_subject', subject_id=subject.id) }}" method="POST">
+                        <button type="submit" class="delete-btn" onclick="return confirm('Yakin ingin menghapus subjek ini?')">×</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('input_subject') }}" class="btn">Buat Flashcard Baru</a>
+    {% endif %}
+{% endblock %}
