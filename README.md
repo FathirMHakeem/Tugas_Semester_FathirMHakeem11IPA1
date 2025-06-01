@@ -1,0 +1,8 @@
+# FathirMHakeem-Tugas_Semester_FathirMHakeem11IPA1
+Cara kerja dari Flashcards app dari Fathir Mohammad Hakeem 11 IPA 1:
+1. Saat projek dijalankan, jika tidak ada database / flashcard, maka akan ada tulisan "Tidak ada subjek ditemukan. Buat flashcard pertama Anda!" dan pengguna dapat membuat flashcard baru dengan tombol dibawah tulisan.
+2. Ketika tombol "Buat Flashcard Baru" ditekan, pengguna akan dibawa ke page yang dimana mereka akan memasukkan subjek pelajaran dari flashcard yang akan mereka buat. misalkan, saya memasukkan subjek "Informatika" di bagian masukkan subjek dan saat sudah memasukkan pertanyaan dan jawaban, pengguna dapat menekan kotak "Informatika" untuk mengerjakan flashcard yang sudah mereka buat.
+3. Setelah memasukkan subjek, page selanjutnya adalah page dimana pengguna dapat memasukkan pertanyaan dan jawaban sebanyak apapun dengan menekan "Tambah Kartu" dan jika dirasa pertanyaan sudah cukup banyak, pengguna dapat menekan tombol "Selesai" dan pengguna akan dibawa kembali ke homepage.
+4. Ketika pengguna sudah selesai membuat flashcards, flashcards tersebut akan muncul di homepage dan saat menekan kotak subjek, pengguna dapat mengerjakan flashcards yang ditata secara random.
+5. Saat flashcards selesai dikerjakan, page akan menampilkan jumlah skor benar dari total pertanyaan flashcard dan jika ada yang salah, maka jawaban yang benar akan ditampilkan.
+6. Pengguna juga dapat membuat flashcards baru di homepage dengan subjek yang berbeda dan isi pertanyaan dan jawaban yang berbeda. Jika pengguna mencoba untuk membuat flashcard baru dengan subjek yang sama dengan subjek yang telah ada di database, maka alert error akan muncul bahwa pengguna tidak dapat membuat subjek yang mempunyai nama yang sama.
